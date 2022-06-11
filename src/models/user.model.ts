@@ -13,7 +13,7 @@ export interface UserDocument extends mongoose.Document {
 }
 
 
-const userschema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
 	email: {
 		type: String,
 		required: true,
@@ -58,6 +58,6 @@ userSchema.methods.comparePassword = async function(candidatePassword: string): 
 }
 
 
-const UserModel = mongoose.Model("User", userschema);
+const UserModel = mongoose.model("User", userSchema);
 
 export default UserModel;
